@@ -6,7 +6,7 @@ Using mediapipe to recognize the hand of a person image and generate annotated i
 2. Install the required packages in the terminal: pip install -r requirements.txt.
 
 1.安装python，如果已安装跳过.\
-2.在终端安装所需的包：pip install -r requirements.txt.\
+2.在终端安装所需的包：pip install -r requirements.txt.
 
 ## Usage
 1. Change the path inside handDetector.py to the path of the folder where you want to process the image.
@@ -19,4 +19,5 @@ Using mediapipe to recognize the hand of a person image and generate annotated i
 
 
 ## Download Models
+https://huggingface.co/mskani/controlnet-hands
 
