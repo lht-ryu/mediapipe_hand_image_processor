@@ -14,7 +14,6 @@ FONT_SIZE = 1
 FONT_THICKNESS = 1
 HANDEDNESS_TEXT_COLOR = (88, 205, 54) # vibrant green
 
-#测试
 #hand_landmarks_style = mp_draw.DrawingSpec(color=(255,2,0),  circle_radius=4)
 #hand_connections_style = mp_draw.DrawingSpec(color=(0,2,255), thickness= 2,)
 
@@ -41,13 +40,12 @@ def draw_landmarks_on_image(rgb_image, detection_result):
     # Draw the hand landmarks.
     hand_landmarks_proto = landmark_pb2.NormalizedLandmarkList()
     hand_landmarks_proto.landmark.extend([
-      #从标记列表结果里，标准化构造每个标记，构造标记原型
       landmark_pb2.NormalizedLandmark(x=landmark.x, y=landmark.y, z=landmark.z) for landmark in hand_landmarks
     ])
-    mp_draw.draw_landmarks(     #绘制标记工具
-      image=annotated_image,#绘制在输入的图像上
-      landmark_list=hand_landmarks_proto,#标记点原型
-      connections=solutions.hands.HAND_CONNECTIONS,#绘制方法，连线
+    mp_draw.draw_landmarks(
+      image=annotated_image,
+      landmark_list=hand_landmarks_proto,
+      connections=solutions.hands.HAND_CONNECTIONS,
       landmark_drawing_spec=ihand_landmarks_style,
       connection_drawing_spec=ihand_connections_style
     )
