@@ -6,7 +6,7 @@ import handLandmarks
 import numpy as np
 import cv2
 
-folder = "C:\\Users\\Ani\\Desktop\\detector\\"  # 替换文件夹路径
+folder = "C:\\Users\\Ani\\Desktop\\detector\\"  # 替换文件夹路径 Replace the path
 file_name = os.listdir(folder)
 model_asset_path=os.getcwd() + '\hand_landmarker.task'
 base_options = python.BaseOptions(model_asset_path)
