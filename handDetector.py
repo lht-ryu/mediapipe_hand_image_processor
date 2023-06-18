@@ -19,9 +19,11 @@ for image_name in file_name:
     image_path = folder + image_name
 
     input_image = cv2.imread(image_path)
-    balck_image = np.zeros(input_image.shape, np.uint8)
-    balck_image[:] = [0, 0, 0]
-    mp_image = mp.Image.create_from_file(image_path)
-    detection_result = detector.detect(mp_image)
-    annotated_image = handLandmarks.draw_landmarks_on_image(balck_image, detection_result)
-    cv2.imwrite( folder + 'hand_' + image_name, annotated_image)
+
+    if not input_image is None:
+        empty = np.zeros(input_image.shape, np.uint8)
+        empty[:] = [0, 0, 0]
+        mp_image = mp.Image.create_from_file(image_path)
+        detection_result = detector.detect(mp_image)
+        annotated_image = handLandmarks.draw_landmarks_on_image(empty, detection_result)
+        cv2.imwrite( folder + 'hand_' + image_name, annotated_image)
